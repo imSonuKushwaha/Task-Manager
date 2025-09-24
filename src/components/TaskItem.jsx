@@ -35,7 +35,11 @@ const TaskItem = React.memo(({ task }) => {
         </span>
       </div>
       <div className="flex items-center gap-2">
-        <button onClick={onDelete} className="text-red-500">
+        <button
+          onClick={onDelete}
+          className="text-red-500"
+          style={{ backgroundColor: "#1a1a1a", padding: "6px 12px" }}
+        >
           ✕
         </button>
       </div>
