@@ -52,6 +52,10 @@ export const TaskProvider = ({ children }) => {
     setStoredTasks((prev) => prev.filter((t) => !t.completed));
   }, [setStoredTasks]);
 
+  const markAllCompleted = useCallback(() => {
+    setStoredTasks((prev) => prev.map((t) => ({ ...t, completed: true })));
+  }, [setStoredTasks]);
+
   const tasksCount = useMemo(
     () => ({
       total: storedTasks.length,
@@ -71,6 +75,7 @@ export const TaskProvider = ({ children }) => {
       filter,
       setFilter,
       clearCompleted,
+      markAllCompleted,
       tasksCount,
       theme,
       setTheme,
@@ -84,6 +89,7 @@ export const TaskProvider = ({ children }) => {
       filter,
       setFilter,
       clearCompleted,
+      markAllCompleted,
       tasksCount,
       theme,
       setTheme,
